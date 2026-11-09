@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: MPL-2.0
+~ start
+Voz Ancestral: Hasta el hierro más duro cede si escuchas dónde golpearlo.
+Liceo: Dos pedestales, dos melodías. ¿Y la cuarta runa?
+Voz Ancestral: La brasa guarda la firma de quien hizo esta forja. El letrero conserva su secreto.
+=> END
+
+~ well_done
+Liceo: Cuando vine a buscar oro habría arrancado esta pieza sin mirar atrás.
+Voz Ancestral: Y la llama te habría consumido. Esta vez escuchaste.
+Liceo: Ya tengo el tercer fragmento. Me espera el Santuario de la Cima.
+=> END

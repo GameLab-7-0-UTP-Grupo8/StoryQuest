@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="StoryQuest" format=3]
+
+[ext_resource type="Script" uid="uid://dnso5a8iq3s1w" path="res://scenes/menus/storybook/components/story_quest.gd" id="1_y02x1"]
+[ext_resource type="SpriteFrames" uid="uid://vwf8e1v8brdp" path="res://scenes/quests/template_quests/NO_EDIT/NO_EDIT_player_components/NO_EDIT_player.tres" id="2_56763"]
+
+[resource]
+script = ExtResource("1_y02x1")
+threads_to_collect = 1
+language = "es"
+title = "Ecos del Orbe · Piso 4"
+description = "Escucha las runas de la Forja Ancestral, apaga el fuego y rescata el tercer fragmento."
+first_scene = "res://scenes/quests/story_quests/forja_jenny/forja.tscn"
+sprite_frames = ExtResource("2_56763")
+animation_name = &"idle"
+metadata/_custom_type_script = "uid://dts1hwdy3phin"
+

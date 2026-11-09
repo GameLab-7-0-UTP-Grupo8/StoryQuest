@@ -1,0 +1,24 @@
+[gd_scene format=3]
+
+[node name="FinDelPiso" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.09, 0.12, 0.15, 1)
+
+[node name="Centro" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Texto" type="Label" parent="Centro"]
+theme_override_colors/font_color = Color(1, 0.86, 0.60, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+text = "FORJA ANCESTRAL
+
+Tercer fragmento recuperado
+
+La forja se apaga. Una escalera asciende al Santuario de la Cima.
+
+Fin del piso IV"
