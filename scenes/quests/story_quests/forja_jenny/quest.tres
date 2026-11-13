@@ -7,10 +7,11 @@
 script = ExtResource("1_y02x1")
 threads_to_collect = 3
 language = "es"
-title = "Ecos del Orbe · Episodios I–IV"
-description = "Despierta el vestíbulo y recupera tres fragmentos entre los Jardines, los Acueductos y la Forja."
+title = "Ecos del Orbe · Episodios I–V"
+description = "Despierta el vestíbulo y recupera tres fragmentos y devuelve el tiempo a la torre en el Santuario de la Cima."
 first_scene = "res://scenes/quests/story_quests/forja_jenny/story escena intro.tscn"
 sprite_frames = ExtResource("2_56763")
 animation_name = &"idle"
 metadata/_custom_type_script = "uid://dts1hwdy3phin"
+
 
