@@ -23,7 +23,7 @@ func _on_step(index: int) -> void:
 
 func _on_solved() -> void:
 	fire.get_node("AnimationPlayer").play("apagar")
-	hint.text = "El fuego se retira. Recoge el fragmento junto al sello dorado."
+	hint.text = "El fuego se retira. Recoge el fragmento: la víbora custodia el paso al Santuario."
 
 func _record_strike(rune: StringName) -> void:
 	if premio:
@@ -43,3 +43,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		if Rect2(-48, -72, 96, 128).has_point(local_hit):
 			get_viewport().set_input_as_handled()
 			get_tree().change_scene_to_file.call_deferred("res://scenes/quests/story_quests/forja_jenny/cripta.tscn")
+

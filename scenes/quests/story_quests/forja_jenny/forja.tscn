@@ -154,7 +154,7 @@ revealed = false
 item = SubResource("Resource_u8qfb")
 collected_dialogue = ExtResource("16_bt1lb")
 dialogue_title = &"well_done"
-next_scene = "res://scenes/quests/story_quests/forja_jenny/salida.tscn"
+next_scene = "res://scenes/quests/story_quests/forja_jenny/cripta.tscn"
 
 [node name="Sign" parent="OnTheGround" unique_id=263994380 instance=ExtResource("17_757eh")]
 position = Vector2(184, 434)
@@ -214,3 +214,4 @@ mensaje = "BRASAS"
 color_activo = Color(1, 0.42, 0.18, 1)
 
 [connection signal="solved" from="OnTheGround/SequencePuzzle" to="OnTheGround/CollectibleItem" method="reveal"]
+

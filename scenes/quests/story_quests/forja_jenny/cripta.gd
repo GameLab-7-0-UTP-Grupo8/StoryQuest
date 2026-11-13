@@ -25,6 +25,7 @@ var head := Vector2.ZERO
 var waypoint := Vector2i(17, 7)
 const VIPER := preload("res://scenes/quests/story_quests/forja_jenny/episodios/arte/vibora.png")
 var facing_left := false
+var rumbo_al_santuario := false
 var remaining := GEMS.duplicate()
 var elapsed := 0.0
 var outcome := ""
@@ -46,6 +47,7 @@ func fits(point: Vector2) -> bool:
 	return true
 
 func _ready() -> void:
+	rumbo_al_santuario = GameState.quest != null and GameState.quest.inventory.items.size() >= 3
 	hero = center(START)
 	head = center(waypoint)
 
@@ -84,7 +86,8 @@ func _physics_process(dt: float) -> void:
 	if outcome == "victoria":
 		if Input.is_action_just_pressed("interact"):
 			set_physics_process(false)
-			get_tree().change_scene_to_file.call_deferred("res://scenes/quests/story_quests/forja_jenny/forja.tscn")
+			var next := "salida.tscn" if rumbo_al_santuario else "forja.tscn"
+			get_tree().change_scene_to_file.call_deferred("res://scenes/quests/story_quests/forja_jenny/" + next)
 		return
 	var direction := Input.get_vector("move_left","move_right","move_up","move_down")
 	var movement := direction * 230.0 * dt
@@ -143,11 +146,12 @@ func _draw() -> void:
 		draw_colored_polygon(PackedVector2Array([at+Vector2(0,-15),at+Vector2(10,0),at+Vector2(0,15),at+Vector2(-10,0)]),Color("#87f8da"))
 		draw_line(at+Vector2(-2,-8),at+Vector2(-5,1),Color.WHITE,2)
 	draw_set_transform(head, 0.0, Vector2(-1 if facing_left else 1, 1))
-	draw_texture_rect_region(VIPER, Rect2(-28,-28,56,56), Rect2(120 * (int(elapsed*7) % 4),0,120,120))
+	draw_texture_rect_region(VIPER, Rect2(-33,-33,66,66), Rect2(120 * (int(elapsed*7) % 4),0,120,120))
 	draw_set_transform(Vector2.ZERO)
 	draw_texture_rect_region(HERO,Rect2(hero-Vector2(47,57),Vector2(94,94)),Rect2(192 * (int(elapsed * 8) % 4),0,192,192))
 	if outcome != "":
 		draw_rect(Rect2(260,275,760,150),Color("#13212bf7"))
 		var won := outcome=="victoria"
 		label(Vector2(310,338),"¡Escapaste de la serpiente!" if won else "La serpiente te atrapó",36,Color("#ffe09c"))
-		label(Vector2(310,385),"¡Ganaste! Pulsa Espacio para regresar a la Forja." if won else "Regresas al Vestíbulo…",22,Color("#e0efea"))
+		label(Vector2(310,385),("Espacio para subir al Santuario." if rumbo_al_santuario else "Espacio para regresar a la Forja.") if won else "Regresas al Vestíbulo…",22,Color("#e0efea"))
+
