@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: MPL-2.0
+~ start
+Voz Ancestral: Las compuertas necesitan dos núcleos cargados. Desvía cada proyectil hacia un núcleo de su mismo color.
+Liceo: Los chorros azules del suelo me arrastrarán si cruzo cuando broten.
+=> END
+
+~ well_done
+Liceo: La corriente se retira. Aquí está el segundo fragmento.
+Voz Ancestral: Ahora escucha el canto de la Forja.
+=> END

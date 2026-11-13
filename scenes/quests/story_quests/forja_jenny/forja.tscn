@@ -31,6 +31,10 @@
 [ext_resource type="SpriteFrames" path="res://scenes/quests/story_quests/forja_jenny/luna.tres" id="art_luna"]
 [ext_resource type="SpriteFrames" path="res://scenes/quests/story_quests/forja_jenny/brasa.tres" id="art_brasa"]
 
+[ext_resource type="Script" path="res://scenes/quests/story_quests/forja_jenny/episodios/peligros.gd" id="peligro"]
+
+[ext_resource type="SpriteFrames" path="res://scenes/quests/story_quests/forja_jenny/episodios/arte/liceo.tres" id="liceo"]
+
 [sub_resource type="Resource" id="Resource_u8qfb"]
 script = ExtResource("15_5fyey")
 type = 2
@@ -78,6 +82,7 @@ script = ExtResource("floor")
 y_sort_enabled = true
 
 [node name="Player" parent="OnTheGround" unique_id=747348360 instance=ExtResource("2_f16fo")]
+sprite_frames = ExtResource("liceo")
 position = Vector2(383, 371)
 
 [node name="Camera2D" type="Camera2D" parent="OnTheGround/Player" unique_id=1732237457]
@@ -177,14 +182,14 @@ script = ExtResource("seal")
 [node name="PrimeraGuia" type="Label" parent="OnTheGround/SequencePuzzle/Signs/HintSign1"]
 offset_left = -47.0
 offset_top = -83.0
-text = "I  ·  ESCUCHA"
+text = "I  Ã‚·  ESCUCHA"
 theme_override_constants/outline_size = 5
 theme_override_colors/font_color = Color(1, 0.88, 0.55, 1)
 
 [node name="SegundaGuia" type="Label" parent="OnTheGround/SequencePuzzle/Signs/HintSign2"]
 offset_left = -29.0
 offset_top = -107.0
-text = "II  ·  ECO"
+text = "II  Ã‚·  ECO"
 theme_override_constants/outline_size = 5
 theme_override_colors/font_color = Color(1, 0.88, 0.55, 1)
 
@@ -199,5 +204,13 @@ theme_override_colors/font_outline_color = Color(0.05, 0.08, 0.1, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 23
 mouse_filter = 2
+
+
+[node name="Peligros" type="Node2D" parent="."]
+z_index = 2
+script = ExtResource("peligro")
+centros = PackedVector2Array(462, 359, 649, 330, 740, 418)
+mensaje = "BRASAS"
+color_activo = Color(1, 0.42, 0.18, 1)
 
 [connection signal="solved" from="OnTheGround/SequencePuzzle" to="OnTheGround/CollectibleItem" method="reveal"]
