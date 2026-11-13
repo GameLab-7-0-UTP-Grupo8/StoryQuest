@@ -1,12 +1,13 @@
 # SPDX-License-Identifier: MPL-2.0
 ~ start
-Voz Ancestral: Hasta el hierro más duro cede si escuchas dónde golpearlo.
-Liceo: Dos pedestales, dos melodías. ¿Y la cuarta runa?
-Voz Ancestral: La brasa guarda la firma de quien hizo esta forja. El letrero conserva su secreto.
+Herrero: El agua ha vuelto a mi taller. Hacía años que no podía enfriar una hoja.
+Liceo: He venido por el último trozo de cristal. En los otros dos oigo a la gente de la torre.
+Herrero: A este tendrás que responderle. Escucha los dos pedestales y repite sus melodías en las runas.
+Herrero: Si tocas LUNA con el ratón, despertarás a la víbora que custodia mi cripta.
 => END
 
 ~ well_done
-Liceo: Cuando vine a buscar oro habría arrancado esta pieza sin mirar atrás.
-Voz Ancestral: Y la llama te habría consumido. Esta vez escuchaste.
-Liceo: Ya tengo el tercer fragmento. Me espera el Santuario de la Cima.
+Herrero: Ahí lo tienes. ¿Cuánto pedirás por ese cristal cuando vuelvas al mercado?
+Liceo: Esta mañana te habría dicho un precio. Ahora oigo el cántaro, la rueda y tu martillo. Me lo llevo entero al Santuario.
+Voz Ancestral: Mira arriba, Liceo. Ya puedes subir.
 => END

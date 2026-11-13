@@ -1,10 +1,12 @@
 # SPDX-License-Identifier: MPL-2.0
 ~ start
-Voz Ancestral: Las compuertas necesitan dos núcleos cargados. Desvía cada proyectil hacia un núcleo de su mismo color.
-Liceo: Los chorros azules del suelo me arrastrarán si cruzo cuando broten.
+Guardián del cauce: ¿Quién encendió esa luz del jardín? Reconocería la mecha de mi hermana en plena tormenta.
+Liceo: Ella me envía. ¿Cómo bajo el agua para llegar al fragmento?
+Guardián del cauce: Desvía los disparos hacia dos núcleos de su mismo color. Pasa entre los chorros cuando bajen.
 => END
 
 ~ well_done
-Liceo: La corriente se retira. Aquí está el segundo fragmento.
-Voz Ancestral: Ahora escucha el canto de la Forja.
+Guardián del cauce: ¡Otra vez gira la rueda! Cuando veas a mi hermana, dile que hoy sí habrá agua para el jardín.
+Liceo: El segundo fragmento está tibio. ¿Por qué suena como un martillo?
+Guardián del cauce: Es el herrero de arriba. Lleva esperando que alguien le conteste.
 => END

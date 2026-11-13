@@ -23,7 +23,8 @@ const DIRS := [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]
 var hero := Vector2.ZERO
 var head := Vector2.ZERO
 var waypoint := Vector2i(17, 7)
-var trail: Array[Vector2] = []
+const VIPER := preload("res://scenes/quests/story_quests/forja_jenny/episodios/arte/vibora.png")
+var facing_left := false
 var remaining := GEMS.duplicate()
 var elapsed := 0.0
 var outcome := ""
@@ -47,8 +48,6 @@ func fits(point: Vector2) -> bool:
 func _ready() -> void:
 	hero = center(START)
 	head = center(waypoint)
-	trail.resize(13)
-	trail.fill(head)
 
 func next_step(origin: Vector2i, target: Vector2i) -> Vector2i:
 	if origin == target:
@@ -99,12 +98,9 @@ func _physics_process(dt: float) -> void:
 		var dest := center(waypoint)
 		if waypoint == cell_at(hero) and cell_at(head) == waypoint:
 			dest = hero
+		if absf(dest.x - head.x) > 0.1:
+			facing_left = dest.x < head.x
 		head = head.move_toward(dest, (76.0 + 8.0 * (2 - remaining.size())) * dt)
-		trail[0] = head
-		for i in range(1,trail.size()):
-			var gap := trail[i-1] - trail[i]
-			if gap.length() > 7:
-				trail[i] += gap.normalized() * (gap.length()-7)
 	if head.distance_to(hero) < 23:
 		outcome = "captura"
 	else:
@@ -121,7 +117,7 @@ func label(at: Vector2, value: String, size_: int, color: Color) -> void:
 func _draw() -> void:
 	draw_rect(Rect2(-1200,-800,4000,2400),Color("#10191f"))
 	label(Vector2(72,43),"La cripta lunar",32,Color("#f5e7bb"))
-	label(Vector2(72,78),"Flechas para moverte. Recoge los dos cristales y alcanza el portal.",21,Color("#b5d4d1"))
+	label(Vector2(72,78),"Víbora lunar: «Dos cristales abren mi puerta, si llegas antes que yo».   •   Mover: flechas",21,Color("#b5d4d1"))
 	label(Vector2(1000,56),"CRISTALES   %d / 2" % (2-remaining.size()),20,Color("#f6d58a"))
 	for y in MAP.size():
 		for x in MAP[y].length():
@@ -146,14 +142,9 @@ func _draw() -> void:
 		draw_circle(at,20,Color("#224e58"))
 		draw_colored_polygon(PackedVector2Array([at+Vector2(0,-15),at+Vector2(10,0),at+Vector2(0,15),at+Vector2(-10,0)]),Color("#87f8da"))
 		draw_line(at+Vector2(-2,-8),at+Vector2(-5,1),Color.WHITE,2)
-	for i in range(trail.size()-1,-1,-1):
-		var radius := 5.0+8.0*(1.0-float(i)/trail.size())
-		draw_circle(trail[i],radius+2,Color("#202829"))
-		draw_circle(trail[i],radius,Color("#b7aa50") if i%3==0 else Color("#71915b"))
-	var facing := (hero-head).normalized()
-	for side in [-1,1]:
-		draw_circle(head+facing*6+facing.orthogonal()*6*side,3,Color("#ffb64d"))
-	draw_line(head+facing*10,head+facing*20,Color("#de7463"),2)
+	draw_set_transform(head, 0.0, Vector2(-1 if facing_left else 1, 1))
+	draw_texture_rect_region(VIPER, Rect2(-28,-28,56,56), Rect2(120 * (int(elapsed*7) % 4),0,120,120))
+	draw_set_transform(Vector2.ZERO)
 	draw_texture_rect_region(HERO,Rect2(hero-Vector2(47,57),Vector2(94,94)),Rect2(192 * (int(elapsed * 8) % 4),0,192,192))
 	if outcome != "":
 		draw_rect(Rect2(260,275,760,150),Color("#13212bf7"))

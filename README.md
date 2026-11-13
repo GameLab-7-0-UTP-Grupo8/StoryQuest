@@ -1,6 +1,6 @@
 # Ecos del Orbe · Episodios I–IV
 
-Acompaña a Liceo desde el Vestíbulo hasta la Forja. Despierta el orbe, esquiva las patrullas y reúne tres fragmentos para abrir el camino al Santuario.
+Acompaña a Liceo desde el Vestíbulo hasta la Forja. Al romper el orbe, Liceo descubre una torre atrapada en la misma mañana. Habla con la Farolera, el Guardián del cauce y el Herrero mientras reúne los tres fragmentos. La Forja cierra el episodio IV. El Santuario de la Cima es el quinto y último piso previsto.
 
 ## Jugar y editar
 
@@ -14,7 +14,7 @@ Para integrar la versión GitHub copia scenes/quests/story_quests/forja_jenny a 
 
 ## Arte y prueba
 
-Los archivos fuente de Aseprite y las animaciones importadas de Liceo están en episodios/arte. Las runas tienen notas y efectos animados propios.
+Los archivos fuente de Aseprite y las animaciones importadas de Liceo están en episodios/arte. La víbora lunar usa los cuatro fotogramas de tus archivos de Aseprite. Las runas tienen notas y efectos animados propios.
 La prueba automatizada en Godot recorrió las cuatro escenas, verificó la vuelta a la entrada al tocar una puerta, la activación de las losas, los dos núcleos, las runas, la insignia, los tres fragmentos y el final. Queda por probar con compañeros si el aviso de cada puerta da tiempo suficiente. Si cuesta distinguirlo, se alargará el aviso ámbar.
 
 ![Los cuatro episodios](media/cuatro-episodios.png)
